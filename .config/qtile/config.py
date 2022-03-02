@@ -81,7 +81,7 @@ keys = [
     Key([mod], "p", lazy.spawn("dmenu_run"), desc="run dmenu"),
     Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch firefox browser"),
     Key([mod], "e", lazy.spawn("emacs"), desc="Launch (doom) emacs"),
-    Key([mod], "c", lazy.spawn("emacs $HOME/.config/qtile/config.py"), desc="Launch (doom) emacs with the config file"),
+    Key([mod], "c", lazy.spawn("emacs ~/.config/qtile/config.py"), desc="Launch (doom) emacs with the config file"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
 ]
 
