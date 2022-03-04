@@ -79,7 +79,7 @@ keys = [
     
     # My keybinds
     Key([mod], "p", lazy.spawn("dmenu_run"), desc="run dmenu"),
-    Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch firefox browser"),
+    Key([mod, "shift"], "b", lazy.spawn("brave"), desc="Launch brave browser"),
     Key([mod], "e", lazy.spawn("emacs"), desc="Launch (doom) emacs"),
     Key([mod], "c", lazy.spawn("emacs ~/.config/qtile/config.py"), desc="Launch (doom) emacs with the config file"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
@@ -223,6 +223,8 @@ app_rules = {
     "Discord": "CHAT",
     "EasyEffects": "MIC",
     "Steam": "GAME",
+    "raot": "GAME",
+    "emacs@arch": "DEV",
 }
 
 @hook.subscribe.client_new
