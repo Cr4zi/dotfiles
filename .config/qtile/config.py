@@ -10,7 +10,7 @@
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
+#  copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in
@@ -26,9 +26,11 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import qtile
+from libqtile import bar, layout, widget, hook, extension
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord
 from libqtile.lazy import lazy
+from libqtile.command import lazy
 from libqtile.utils import guess_terminal
 
 import os, subprocess, datetime, psutil, logging
@@ -36,7 +38,20 @@ import os, subprocess, datetime, psutil, logging
 logging.basicConfig(filename="logs.log", level=logging.DEBUG)
 
 mod = "mod4"
-terminal = "alacritty" 
+terminal = "alacritty"
+theme_style = {
+    "vagabond":{
+        "color": "#bc5c64",
+        "background": "03.jpg",
+    },
+    "noridic_type":{
+        "color": "#00acce",
+        "background": "02.jpg",
+    }
+}
+current_theme = "vagabond"
+current_color = theme_style[current_theme]["color"]
+current_bg = theme_style[current_theme]["background"]
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -81,7 +96,7 @@ keys = [
     Key([mod], "p", lazy.spawn("dmenu_run"), desc="run dmenu"),
     Key([mod, "shift"], "b", lazy.spawn("brave"), desc="Launch brave browser"),
     Key([mod], "e", lazy.spawn("emacs"), desc="Launch (doom) emacs"),
-    Key([mod], "c", lazy.spawn("emacs ~/.config/qtile/config.py"), desc="Launch (doom) emacs with the config file"),
+    Key([mod], "c", lazy.spawn("emacs ~/.config/qtile/config.py"), desc="Launch dmenu script for launching config files"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
 ]
 
@@ -98,8 +113,8 @@ for i, name in enumerate(groups_name, 1):
 
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Tile(margin=10, border_focus="#00acce", ratio=0.5, border_width=2),
-    layout.MonadTall(border_focus="#00acce", margin=10, ratio=0.5),
+    layout.Tile(margin=10, border_focus=current_color, ratio=0.5, border_width=2),
+    layout.MonadTall(border_focus=current_color, margin=10, ratio=0.5),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -127,20 +142,19 @@ screens = [
             [
                 widget.GroupBox(
                     highlight_color="#2a2b2b",
-                    highlight_method = "line",
+                    highlight_method="line",
+                    this_current_screen_border=current_color,
+                    other_current_screen_border=current_color,
+                    this_screen_border="#2a2b2b",
                 ),
                 widget.Prompt(),
-                widget.WindowName(foreground="#00acce"),
+                widget.WindowName(foreground=current_color),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.CryptoTicker(currency="USD", crypto="ETH", update_interval=400,format="ETH: {amount:.2f}$"),
-                widget.Sep(),
-                widget.NvidiaSensors(format="Temp: {temp}°C"),
-                widget.Sep(),
                 widget.Net(format="{interface}: {down} ↓↑ {up}"),
                 widget.Sep(),
                 widget.CheckUpdates(
@@ -169,9 +183,13 @@ screens = [
                 widget.GroupBox(
                     highlight_color="#2a2b2b",
                     highlight_method="line",
+                    this_current_screen_border=current_color,
+                    other_current_screen_border=current_color,
+                    this_screen_border="#2a2b2b",
+
                 ),
                 widget.Prompt(),
-                widget.WindowName(foreground="#00acce"),
+                widget.WindowName(foreground=current_color),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
