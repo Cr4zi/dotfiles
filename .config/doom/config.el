@@ -32,8 +32,10 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'kaolin-dark)
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
+(setq doom-theme 'gruber-darker)
+;;(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
+;;(setq doom-font (font-spec :family "Anonymice Pro Nerd Font" :size 18 :weight 'normal))
+(setq doom-font (font-spec :family "Caskaydia Cove Nerd Font" :size 18 :weight 'normal))
 
 (add-to-list 'default-frame-alist '(alpha . 90))
 
@@ -112,11 +114,10 @@
 (map! :leader "8" 'harpoon-go-to-8)
 (map! :leader "9" 'harpoon-go-to-9)
 
-(map! "C-f C-f" 'dired-create-empty-file)
 
 ;; Elcord
-;; (elcord-mode)
-;; (setq elcord-editor-icon "emacs_material_icon")
+(elcord-mode)
+(setq elcord-editor-icon "emacs_material_icon")
 
 ;; Org-Bullets
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -151,6 +152,9 @@ _h_ decrease width    _l_ increase width
 (map!
     (:prefix "C-w"
       :desc "Hydra resize" :n "SPC" #'doom-window-resize-hydra/body))
+
+(map! :leader "n N" 'dired-create-empty-file)
+(map! :leader "n D" 'dired-create-directory)
 
 (use-package! org-krita
   :config

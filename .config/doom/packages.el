@@ -55,6 +55,7 @@
 (package! org-inline-pdf)
 (package! tree-sitter)
 (package! tree-sitter-langs)
+(package! gruber-darker-theme)
 (package! harpoon)
 (package! elcord)
 (package! beacon)
