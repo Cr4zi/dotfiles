@@ -5,6 +5,8 @@
 ## Download
 - hyprland
 - hyprpaper
+- hyprlock
+- hypridle
 - waybar
 - alacritty
 - emacs(doom)
