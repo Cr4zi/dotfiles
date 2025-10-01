@@ -12,5 +12,6 @@
 - spotify
 - dunst
 - zsh
+- oh-my-zsh
 - zen-browser
 - paru
