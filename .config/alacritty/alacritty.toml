@@ -28,7 +28,7 @@ padding = {x=15, y=10}
 
 [general]
 import = [
-	"~/.config/alacritty/tokyo_night.toml"
+	"~/.config/alacritty/dark_blue.toml"
 ]
 
 
