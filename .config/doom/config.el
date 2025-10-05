@@ -77,7 +77,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; doom-tomorrow-night
-(setq doom-theme 'gruber-darker)
+(setq doom-theme 'ef-bio)
 ;;(add-to-list 'custom-theme-load-path "$HOME/.config/doom/themes")
 ;;(load-theme 'handmade t)
 

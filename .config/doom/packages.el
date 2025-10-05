@@ -53,3 +53,4 @@
 (package! elcord)
 (package! org-bullets)
 (package! kanagawa-themes)
+(package! ef-themes)
