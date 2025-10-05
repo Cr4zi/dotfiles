@@ -2,7 +2,7 @@
 
 ![](screenshot.png)
 
-## Dependency
+## Dependencies
 - hyprland
 - hyprpaper
 - hyprlock
