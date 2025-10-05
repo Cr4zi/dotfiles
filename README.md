@@ -2,7 +2,7 @@
 
 ![](screenshot.png)
 
-## Download
+## Dependency
 - hyprland
 - hyprpaper
 - hyprlock
@@ -17,3 +17,4 @@
 - oh-my-zsh
 - zen-browser
 - paru
+- nvibrant
