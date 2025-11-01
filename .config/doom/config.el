@@ -33,7 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; doom-tomorrow-night
-(setq doom-theme 'doom-old-hope)
+(setq doom-theme 'gruber-darker)
 ;; (add-to-list 'custom-theme-load-path "$HOME/.config/doom/themes")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -98,8 +98,8 @@
 (map! :leader "9" 'harpoon-go-to-9)
 
 ;; Discord Rich Presence
-(elcord-mode)
-(setq elcord-editor-icon "emacs_material_icon")
+;;(elcord-mode)
+;;(setq elcord-editor-icon "emacs_material_icon")
 
 ;; Org-Bullets
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -118,6 +118,6 @@
 
 (after! cc-mode
   (setq c-basic-offset 4)
-  (setq c-default-style "linux"))
+  (setq c-default-style "bsd"))
 (after! c-ts-mode
   (setq c-ts-mode-indent-offset 4))

@@ -115,7 +115,9 @@ source $ZSH/oh-my-zsh.sh
 alias ls='eza -la'
 alias f='ranger'
 
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+#source /opt/esp-idf/export.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
