@@ -54,3 +54,5 @@
 (package! org-bullets)
 (package! kanagawa-themes)
 (package! ef-themes)
+(package! pipenv)
+(package! kaolin-themes)
