@@ -3,22 +3,22 @@
 program = "/bin/zsh"
 
 [font]
-size = 14
+size = 16
 
 [font.bold]
-family = "JetBrains Mono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrains Mono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrains Mono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrains Mono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Regular"
 
 [window]
@@ -28,7 +28,7 @@ padding = {x=15, y=10}
 
 [general]
 import = [
-	"~/.config/alacritty/dark_blue.toml"
+	"~/.config/alacritty/idk.toml"
 ]
 
 
