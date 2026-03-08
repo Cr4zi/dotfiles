@@ -33,7 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; doom-tomorrow-night
-(setq doom-theme 'kaolin-dark)
+(setq doom-theme 'kanagawa-dragon)
 ;; (add-to-list 'custom-theme-load-path "$HOME/.config/doom/themes")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -98,8 +98,8 @@
 (map! :leader "9" 'harpoon-go-to-9)
 
 ;; Discord Rich Presence
-;;(elcord-mode)
-;;(setq elcord-editor-icon "emacs_material_icon")
+(elcord-mode)
+(setq elcord-editor-icon "emacs_material_icon")
 
 ;; Org-Bullets
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -121,8 +121,14 @@
   (setq c-default-style "bsd"))
 (after! c-ts-mode
   (setq c-ts-mode-indent-offset 4))
+(defun my-cpp-namespace-style ()
+  (c-set-offset 'innamespace 0))
+
+(add-hook 'c++-mode-hook 'my-cpp-namespace-style)
+(add-hook 'c-mode-hook 'my-cpp-namespace-style)
 
 (use-package pipenv
   :ensure t
   :hook (python-mode . pipenv-mode)
-  :commands (pipenv-mode pipenv-activate pipenv-run))
+  :commands (pipenv-activate pipenv-run))
+
