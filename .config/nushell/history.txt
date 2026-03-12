@@ -1,0 +1,567 @@
+ls
+mkdir Applications
+mv ~/Downloads/DesktopEditors-arm64.AppImage Applications/
+ls
+cd Applications/
+ls
+chmod +x DesktopEditors-arm64.AppImage
+ls
+./DesktopEditors-arm64.AppImage
+rm DesktopEditors-arm64.AppImage
+mv ~/Downloads/DesktopEditors-x86_64.AppImage .
+ls
+chmod +x DesktopEditors-x86_64.AppImage
+./DesktopEditors-x86_64.AppImage
+clear
+cd ..
+vim .config/foot/foot.ini
+cd Applications/
+ls
+ls .local/pkgs/void-packages/srcpkgs/ | grep spotify
+cd .local/pkgs/void-packages/
+fastfetch
+./xbps-src pkg spotify
+xi spotify
+sudo xbps-install -S dunst
+ps -ef | grep dunst
+man ps
+ps
+ps | grep dunst
+sudo xbps-install pavucontrol
+fastfetch
+cd .config/foot/
+ls
+vim foot.ini
+ls
+rm 2026-03-11-135202_hyprshot.png
+xbps-query -Rs emacs
+sudo xbps-install -S emacs emacs-common emacs-gtk3
+cd .local/pkgs/void-packages/
+./xbps-src pkg hyprland-qt-support
+xi hyprland-qt-support
+sudo xbps-install --repository hostdir/binpkgs hyprland-qt-support
+xbps-query qt5-wayland
+xbps-query qt
+cd ..
+xbps-query -Rs qt5-wayland
+sudo xbps-install -S qt5-wayland qt6-wayland
+ךד
+config nu
+git config --global user.name "Ori Mizrahi"
+git config --global user.email "ori.mizrahi1000@gmail.com"
+git config --global core.editor "vim"
+export
+export $EDITOR=vim
+export $EDITOR=vim $env.EDITOR=vim
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+fastfetch
+$env.config.buffer_editor = "vim"
+config nu
+ls
+~/.config/emacs/bin/doom install
+~/.config/emacs/bin/doom upgrade
+clang
+sudo xbps-install -S clang
+clear
+ls
+ssh-keygen -t ed25519 -C "ori.mizrahi1000@gmail.com"
+cat .ssh/id_ed25519.pub
+lsblk
+sudo mkdir /mnt
+ls /mnt/
+sudo mount /dev/sda1 /mnt/1TB
+sudo mkdir /mnt/1TB
+sudo mount /dev/sda1 /mnt/1TB
+sudo mkdir /mnt/halfTB
+sudo mount /dev/sdb2 /mnt/halfTB
+sudo mount /dev/sdb1 /mnt/halfTB
+ls
+lsblk
+xgenfstab /
+xgenfstab -U /
+sudo vim /etc/fstab
+clear
+fastfetch
+cd /mnt/1TB/
+ls
+ls /mnt/halfTB/
+cd ..
+cd halfTB/
+ls
+cd Shadps4/
+ls
+cd 
+mkdir git
+rm git/
+git clone --recursive https://github.com/shadps4-emu/shadPS4QtLauncher.git
+git clone --recursive git@github.com:shadps4-emu/shadps4-qtlauncher.git
+cd shadps4-qtlauncher/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs cmake
+sudo xbps-install cmake
+sudo xbps-install make
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+cmake --build ./build --parallel$(nproc)
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+cmake --build ./build --parallel$(nproc)
+cmake --build ./build --parallel $(nproc)
+cmake --build ./build --parallel=$(nproc)
+xbps-query -Rs pkg
+sudo xbps-install -S pk-config pkgconf pkgconf-devel
+sudo xbps-install -S pkg-config pkgconf pkgconf-devel
+sudo xbps-install alsa-pipewire
+sudo mkdir -p /etc/alas/conf.d
+rm /etc/alas/
+sudo rm -rf /etc/alas/
+sudo mkdir -p /etc/alsa/conf.d
+sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
+sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
+sudo xbps-install libjack-pipewire
+xbps-query -Rs x11
+cd shadps4-qtlauncher/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+rm -rf build/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs sdl3
+sudo xbps-install -S SDL3-devel
+ls
+rm -rf build/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs qt6
+sydi xbps-install qt6-base qt6-tools qt6-wayland
+sudo xbps-install qt6-base qt6-tools qt6-wayland
+rm -rf build
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs qt6 | grep devel
+sudo xbps-install qt6-wayland-devel
+fastfetch
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+rm -rf build/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs qt6 | grep multimedia
+sudo xbps-install -S qt6-multimedia qt6-multimedia-devel
+rm -rf build/
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs libcpp
+sudo xbps-install libcppunit libcppunit-devel
+rm -rf build
+cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+cmake --build ./build --parallel$(nproc)
+bash
+./build/shadPS4QtLauncher
+cd 
+mkdir -p .local/share/applications
+mkdir .local/share/applications
+cd .local/share/applications/
+ls
+touch shadPS4.desktop
+cd shadps4-qtlauncher/
+ls
+ls build/
+vim shadPS4.desktop
+mkdir git
+cd git/
+git clone https://github.com/Tremeschin/nvibrant && cd nvibrant
+git clone https://github.com/Tremeschin/nvibrant and cd nvibrant
+git clone https://github.com/Tremeschin/nvibrant
+ls
+cd nvibrant/
+git submodule update --init
+cd open-gpu/
+cd ..
+rm -rf nvibrant/
+cd
+mkdir Projects
+cd Projects/
+ls
+mkdir Personal
+mkdir School
+sudo xbps-install pcmanfm
+pcmanfm
+cd ..
+cd .config/hypr/
+ls
+xbps-query -Rs pipenv
+sudo xbps-install -S python3-pipenv
+python
+sudo xbps-install -S git curl make build-essential libssl-dev zlib-devel bzip2-devel readline-devel sqlite3-devel tk-devel libgdbm-devel libc6-dev libbz2-devel xz-devel libffi-devel
+sudo xbps-install -S git curl make libssl-dev zlib-devel bzip2-devel readline-devel sqlite3-devel tk-devel libgdbm-devel libc6-dev libbz2-devel xz-devel libffi-devel
+xbps-query -Rs pyenv
+cd Projects/
+ls
+cd School/
+git clone git@github.com:Cr4zi/Tetris-Ai.git
+man pipenv
+hyprctl setcursor
+cd
+cd .config/hypr/
+fastfetch
+cd Projects/Personal/
+ls
+git clone git@github.com:Cr4zi/tgrep.git
+clear
+sudo xbps-install -S clangd
+xbps-query -Rs clang
+xbps-query -Rs clang | d
+xbps-query -Rs clang | gre pd
+xbps-query -Rs clang | grep d
+bash
+xbps-query -Rs clangd
+xbps-query -Rs clang clang-analyzer clang-tools-extra llvm
+sudo xbps-install -S clang clang-analyzer clang-tools-extra llvm
+man bool
+clangd --version
+~/.config/emacs/bin/doom doctor
+sudo xbps-isntall fd ripgrep
+sudo xbps-install fd ripgrep
+~/.config/emacs/bin/doom doctor
+xbps-query -Rs glslang
+sudo xbps-install glslang glslang-devel
+~/.config/emacs/bin/doom doctor
+sudo xbps-install lsp
+sudo xbps-install lsp-mode
+~/.config/emacs/bin/doom doctor
+sudo xbps-install node
+sudo xbps-install npm
+xbps-query npm
+xbps-query -Rs npm
+xbps-query -Rs node
+xbps-install nodejs
+sudo xbps-install nodejs
+gdb
+~/.config/emacs/bin/doom doctor
+fastfetch
+xbps-query -Rs steam
+sudo xbps-install -S steam
+ps -ef
+ps 
+pkill steam
+xbps-query -Rs steam
+steam
+xbps-query -Rs drm
+sudo xbps-install -S libdrm-32bit
+uname- r
+uname -r
+uanme
+man uname
+uname -r
+uname r
+uanme -r
+uname -r
+help uname
+uname
+^uname -r
+^ls
+^ps -ef
+cd .config/hypr/
+ls
+vim hyprland.conf
+man 2 perror
+sudo xbps-install man man-db
+man 2 perror
+man perror
+sudo xbps-install man-posix-devel man-pages-posix
+sudo xbps-install man-pages-devel man-pages-posix
+man 2 perror
+man perror
+man memset
+makewhatis /usr/share/man
+man free
+man 2 free
+man 3 free
+fastfetch
+cd .config/hypr/
+ls
+vim hyprland.conf
+cp `/mnt/1TB/Bloodborne PS4 PKGs/save/SPRJ0005/` .local/share/shadPS4/savedata/1/CUSA00207/
+cp -r `/mnt/1TB/Bloodborne PS4 PKGs/save/SPRJ0005/` .local/share/shadPS4/savedata/1/CUSA00207/
+xbps-query -Rs libjack
+xbps-query -Rs jack-devel
+sudo xbps-install jack-devel
+git clone --recursive https://github.com/shadps4-emu/shadPS4.git
+cd shadPS4/
+cmake -S . -B build/ -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs AudioIO
+xbps-query -Rs audioio
+xbps-query -Rs audio-io
+xbps-query -Rs audio
+xbps-query -Rs audio | grep io
+ls
+ls build/
+cmake -S . -B build/ -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs opensl
+xbps-query -Rs open-sl
+xbps-query -Rs openal
+sudo xbps-install libopenal-devel
+xbps-query -Rs sdl2
+sudo xbps-install SDL2-devel
+xbps-query -Rs libpng
+cmake -S . -B build/ -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+xbps-query -Rs doxygen
+sudo xbps-install -S doxygen
+cmake -S . -B build/ -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+cmake --version
+rm -rf build/
+cmake -S . -B build/ -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+ls
+ls build/
+^cmake --build ./build --parallel$(nproc)
+bash
+config nu
+$env.config.buffer_editor = "vim"
+sudo xbps-install -S xournalpp
+config nu
+cd .config/nushell/
+ls
+vim env.nu
+vim config.nu
+config nu
+whoami
+cat /etc/hostname
+config env
+ls
+path basename
+pwd |path basename
+config nu
+config env
+ls
+config env
+cat ~/.config/nushell/
+cat ~/.config/nushell/env.nu
+config env 
+ls
+config env 
+cat ~/.config/nushell/env.nu
+config env
+vim ~/.config/nushell/env.nu
+ls
+vim ~/.config/nushell/env.nu
+git branch --show-current
+fastfetch 
+xbps-query -Rs starship
+sudo xbps-install starship
+config env 
+config nu
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+cat ~/.config/starship.toml
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+echo "format = """<\n>$username\<\n>$hostname\<\n>$localip\<\n>$shlvl\<\n>$singularity\<\n>$kubernetes\<\n>$directory\<\n>$vcsh\<\n>$fossil_branch\<\n>$fossil_metrics\<\n>$git_branch\<\n>$git_commit\<\n>$git_state\<\n>$git_metrics\<\n>$git_status\<\n>$hg_branch\<\n>$hg_state\<\n>$pijul_channel\<\n>$docker_context\<\n>$package\<\n>$c\<\n>$cmake\<\n>$cobol\<\n>$daml\<\n>$dart\<\n>$deno\<\n>$dotnet\<\n>$elixir\<\n>$elm\<\n>$erlang\<\n>$fennel\<\n>$fortran\<\n>$gleam\<\n>$golang\<\n>$guix_shell\<\n>$haskell\<\n>$haxe\<\n>$helm\<\n>$java\<\n>$julia\<\n>$kotlin\<\n>$gradle\<\n>$lua\<\n>$nim\<\n>$nodejs\<\n>$ocaml\<\n>$opa\<\n>$perl\<\n>$php\<\n>$pulumi\<\n>$purescript\<\n>$python\<\n>$quarto\<\n>$raku\<\n>$rlang\<\n>$red\<\n>$ruby\<\n>$rust\<\n>$scala\<\n>$solidity\<\n>$swift\<\n>$terraform\<\n>$typst\<\n>$vlang\<\n>$vagrant\<\n>$zig\<\n>$buf\<\n>$nix_shell\<\n>$conda\<\n>$meson\<\n>$spack\<\n>$memory_usage\<\n>$aws\<\n>$gcloud\<\n>$openstack\<\n>$azure\<\n>$nats\<\n>$direnv\<\n>$env_var\<\n>$mise\<\n>$crystal\<\n>$custom\<\n>$sudo\<\n>$cmd_duration\<\n>$line_break\<\n>$jobs\<\n>$battery\<\n>$time\<\n>$status\<\n>$os\<\n>$container\<\n>$netns\<\n>$shell\<\n>$character""""
+clear
+echo "$username\<\n>$hostname\<\n>$localip\<\n>$shlvl\<\n>$singularity\<\n>$kubernetes\<\n>$directory\<\n>$vcsh\<\n>$fossil_branch\<\n>$fossil_metrics\<\n>$git_branch\<\n>$git_commit\<\n>$git_state\<\n>$git_metrics\<\n>$git_status\<\n>$hg_branch\<\n>$hg_state\<\n>$pijul_channel\<\n>$docker_context\<\n>$package\<\n>$c\<\n>$cmake\<\n>$cobol\<\n>$daml\<\n>$dart\<\n>$deno\<\n>$dotnet\<\n>$elixir\<\n>$elm\<\n>$erlang\<\n>$fennel\<\n>$fortran\<\n>$gleam\<\n>$golang\<\n>$guix_shell\<\n>$haskell\<\n>$haxe\<\n>$helm\<\n>$java\<\n>$julia\<\n>$kotlin\<\n>$gradle\<\n>$lua\<\n>$nim\<\n>$nodejs\<\n>$ocaml\<\n>$opa\<\n>$perl\<\n>$php\<\n>$pulumi\<\n>$purescript\<\n>$python\<\n>$quarto\<\n>$raku\<\n>$rlang\<\n>$red\<\n>$ruby\<\n>$rust\<\n>$scala\<\n>$solidity\<\n>$swift\<\n>$terraform\<\n>$typst\<\n>$vlang\<\n>$vagrant\<\n>$zig\<\n>$buf\<\n>$nix_shell\<\n>$conda\<\n>$meson\<\n>$spack\<\n>$memory_usage\<\n>$aws\<\n>$gcloud\<\n>$openstack\<\n>$azure\<\n>$nats\<\n>$direnv\<\n>$env_var\<\n>$mise\<\n>$crystal\<\n>$custom\<\n>$sudo\<\n>$cmd_duration\<\n>$line_break\<\n>$jobs\<\n>$battery\<\n>$time\<\n>$status\<\n>$os\<\n>$container\<\n>$netns\<\n>$shell\<\n>$character"
+echo "$username<\n>$hostname\<\n>$localip\<\n>$shlvl\<\n>$singularity\<\n>$kubernetes\<\n>$directory\<\n>$vcsh\<\n>$fossil_branch\<\n>$fossil_metrics\<\n>$git_branch\<\n>$git_commit\<\n>$git_state\<\n>$git_metrics\<\n>$git_status\<\n>$hg_branch\<\n>$hg_state\<\n>$pijul_channel\<\n>$docker_context\<\n>$package\<\n>$c\<\n>$cmake\<\n>$cobol\<\n>$daml\<\n>$dart\<\n>$deno\<\n>$dotnet\<\n>$elixir\<\n>$elm\<\n>$erlang\<\n>$fennel\<\n>$fortran\<\n>$gleam\<\n>$golang\<\n>$guix_shell\<\n>$haskell\<\n>$haxe\<\n>$helm\<\n>$java\<\n>$julia\<\n>$kotlin\<\n>$gradle\<\n>$lua\<\n>$nim\<\n>$nodejs\<\n>$ocaml\<\n>$opa\<\n>$perl\<\n>$php\<\n>$pulumi\<\n>$purescript\<\n>$python\<\n>$quarto\<\n>$raku\<\n>$rlang\<\n>$red\<\n>$ruby\<\n>$rust\<\n>$scala\<\n>$solidity\<\n>$swift\<\n>$terraform\<\n>$typst\<\n>$vlang\<\n>$vagrant\<\n>$zig\<\n>$buf\<\n>$nix_shell\<\n>$conda\<\n>$meson\<\n>$spack\<\n>$memory_usage\<\n>$aws\<\n>$gcloud\<\n>$openstack\<\n>$azure\<\n>$nats\<\n>$direnv\<\n>$env_var\<\n>$mise\<\n>$crystal\<\n>$custom\<\n>$sudo\<\n>$cmd_duration\<\n>$line_break\<\n>$jobs\<\n>$battery\<\n>$time\<\n>$status\<\n>$os\<\n>$container\<\n>$netns\<\n>$shell\<\n>$character"
+echo "$username <\n>$hostname\<\n>$localip\<\n>$shlvl\<\n>$singularity\<\n>$kubernetes\<\n>$directory\<\n>$vcsh\<\n>$fossil_branch\<\n>$fossil_metrics\<\n>$git_branch\<\n>$git_commit\<\n>$git_state\<\n>$git_metrics\<\n>$git_status\<\n>$hg_branch\<\n>$hg_state\<\n>$pijul_channel\<\n>$docker_context\<\n>$package\<\n>$c\<\n>$cmake\<\n>$cobol\<\n>$daml\<\n>$dart\<\n>$deno\<\n>$dotnet\<\n>$elixir\<\n>$elm\<\n>$erlang\<\n>$fennel\<\n>$fortran\<\n>$gleam\<\n>$golang\<\n>$guix_shell\<\n>$haskell\<\n>$haxe\<\n>$helm\<\n>$java\<\n>$julia\<\n>$kotlin\<\n>$gradle\<\n>$lua\<\n>$nim\<\n>$nodejs\<\n>$ocaml\<\n>$opa\<\n>$perl\<\n>$php\<\n>$pulumi\<\n>$purescript\<\n>$python\<\n>$quarto\<\n>$raku\<\n>$rlang\<\n>$red\<\n>$ruby\<\n>$rust\<\n>$scala\<\n>$solidity\<\n>$swift\<\n>$terraform\<\n>$typst\<\n>$vlang\<\n>$vagrant\<\n>$zig\<\n>$buf\<\n>$nix_shell\<\n>$conda\<\n>$meson\<\n>$spack\<\n>$memory_usage\<\n>$aws\<\n>$gcloud\<\n>$openstack\<\n>$azure\<\n>$nats\<\n>$direnv\<\n>$env_var\<\n>$mise\<\n>$crystal\<\n>$custom\<\n>$sudo\<\n>$cmd_duration\<\n>$line_break\<\n>$jobs\<\n>$battery\<\n>$time\<\n>$status\<\n>$os\<\n>$container\<\n>$netns\<\n>$shell\<\n>$character" | grep code
+clear
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+echo ?!
+echo ?$
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+cat ~/.config/starship.toml
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+sudo su
+ls
+vim ~/.config/starship.toml
+clear
+vim ~/.config/starship.toml
+cd Projects/Personal/
+cd tgrep/
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+echo fd
+clear
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+ls
+vim ~/.config/starship.toml
+starship
+vim ~/.config/starship.toml
+dasasd
+vim ~/.config/starship.toml
+vim
+vim asdad
+sad ad
+clear
+sad ad
+clear
+exit 1
+false
+ls
+vim ~/.config/starship.toml
+clear
+sudo xbps-install -S libvirt virt-manager virt-manager-tools
+sudo ln -s /etc/sv/libvirtd /var/service/
+sudo ln -s /etc/sv/virtlockd /var/service
+sudo ln -s /etc/sv/virtlogd /var/service
+xbps-query -Rs kvm
+xbps-query -Rs qemu
+sudo xbps-install qemu qemu-ga
+sudo xbps-install -Suv qemu qemu-ga libvirt virt-manager virt-manager-tools
+sudo usermod -aG libvirt ori
+groups ori
+fastfetch
+info kvm
+bash
+clear
+sudo xbps-reconfigure -fa
+fc-list | grep jetbrains
+fc-list
+cd .config/doom/
+ls
+ls .config/foot/foot.ini
+cat .config/foot/foot.ini
+vim config.el
+xbps-query -Rs libtook
+xbps-query -Rs libtoo;
+xbps-query -Rs libtool
+sudo xbps-install libtool
+fastfetch
+reboot
+sudo reboot
+fastfetch
+ps
+qclear
+clear
+btop
+htop
+top
+sudo xbps-install btop
+btop
+ls
+mkdir Desktop
+mkdir Music
+cd Music/
+ls
+cd ..
+rm -r Music/
+cd /mnt/1TB/
+ls
+touch save
+vim save
+ls
+hyprcursor-util
+cd git/
+git clone git@github.com:guillaumeboehm/hyprcursor_dracula_kde.git
+cd hyprcursor_dracula_kde/
+hyprcursor-util --create . -o .
+ls
+mkdir -p ~/.local/share/icons
+mkdir ~/.local/share/icons
+cp -r theme_Dracula/ ~/.local/share/icons/
+cd
+vim ~/.config/hypr/
+hyprctl setcursor hyprcursor_Dracula 24
+hyprctlcursor
+hyprctl listcurosr
+man hyprctl
+cd git/
+ls
+rm -rf hyprcursor_dracula_kde/
+clear
+shutdown
+sudo shutdown now
+ls /mnt/
+shutdown now
+poweroff
+sudo poweroff
+sudo xbps-install -Su
+man poweroff
+ls
+fastfetch
+man __bultin_popcount
+curl wttr.in/svalbard
+curl wttr.in
+xbps-query -Rs razer
+sudo xbps-install -S openrazer-meta
+openrazer-daemon 
+xbps-query -Rs razer
+sudo xbps-install -S razergenie
+razergenie
+openrazer-daemon &
+openrazer-daemon
+ps
+ps | grep razer
+ls /etc/sv/
+ls /etc/sv/ | grep razer
+sudo reboot
+ps | grep razer
+pkill razergenie
+man xbps-remove
+clear
+man xbps-remove
+sudo xbps-remove -R razergenie openrazer-meta
+sudo dracut -f
+vim /etc/dracut.conf
+sudo vim /etc/dracut.conf
+sudo reboot
+starship 
+ls
+ps
+clear
+ls
+tree /
+tree \
+clear
+fastfetch 
+config nu
+ls
+ps
+cd .config/hypr/
+ls
+vim hyprpaper.conf
+cd .config/waybar/
+ls
+rm \
+ls
+cd dotfiles/
+git status
+cd ..
+mkdir .config
+ls
+ls -la
+ls /usr/share/foot/themes/
+ls /usr/share/foot/themes/ | grep tom
+bash
+ls /usr/share/foot/themes/ | grep tom
+ls /usr/share/foot/themes/
+vim ~/.config/foot/foot.ini
+ls
+vim ~/.config/foot/foot.ini
+ls
+vim ~/.config/foot/foot.ini
+ls
+cd dotfiles/
+ls
+git status
+git add .config/doom/
+git add .config/foot/
+cd .config
+ls
+rm -rf openrazer/
+ls
+git status
+git add .config/hypr/
+git add .config/waybar/
+ls Pictures
+git add Pictures/

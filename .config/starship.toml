@@ -1,0 +1,24 @@
+
+format="""$username\
+$hostname $directory$status$git_branch$git_status$character"""
+
+[username]
+show_always = true
+style_user="bold fg:247"
+format="[$user@]($style)"
+
+[hostname]
+ssh_only = false
+style ="bold fg:247"
+format="[$hostname]($style)"
+
+[directory]
+style = "bold green"
+
+[status]
+disabled=false
+format="[[$status]]($style)"
+
+[git_branch]
+always_show_remote=true
+format="[$branch]($style) "

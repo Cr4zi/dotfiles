@@ -33,14 +33,14 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; doom-tomorrow-night
-(setq doom-theme 'kanagawa-dragon)
+(setq doom-theme 'doom-tomorrow-night)
 ;; (add-to-list 'custom-theme-load-path "$HOME/.config/doom/themes")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 21 :weight 'normal))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Propo" :size 20 :weight 'normal))
 
 (add-to-list 'default-frame-alist '(alpha . 85))
 ;; If you use `org' and don't want your org files in the default location below,

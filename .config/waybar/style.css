@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-    background: #0e1521;
+    background: #242424;
 }
 
 #workspaces button,
@@ -44,10 +44,10 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: #c8a171;
+    background: #adb5bd;
     color: #08080b
 }
 
 #workspaces button {
-    color: #a48c6d;
+    color: #f8f9fa;
 }
