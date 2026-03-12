@@ -8,13 +8,10 @@
 - hyprlock
 - hypridle
 - waybar
-- alacritty
+- foot
 - emacs(doom)
 - rofi
 - spotify
 - dunst
-- zsh
-- oh-my-zsh
-- zen-browser
-- paru
-- nvibrant
+- nushell
+- starship
