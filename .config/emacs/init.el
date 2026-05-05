@@ -2,6 +2,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (electric-indent-mode -1)
+(electric-pair-mode 1)
 
 (setq inhibit-startup-screen t)
 
@@ -14,8 +15,11 @@
 
 (setq make-backup-files nil) ; stop creating ~ files
 
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 130)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+(set-face-attribute 'default nil :font "Iosevka Simple" :height 150)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
 
 (defvar elpaca-installer-version 0.12)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
@@ -89,6 +93,12 @@
   :config
   (load-theme 'modus-vivendi t))
 
+(use-package ef-themes
+  :ensure t
+  :config
+  (load-theme 'ef-bio t))
+
+
 (defun reload-init-file ()
   (interactive)
   (load-file user-init-file)
@@ -115,11 +125,12 @@
 
   (leader-keys
     "b" '(:ignore t :wk "buffer")
-    "bb" '(switch-to-buffer :wk "Switch buffer")
+    "bb" '(consult-buffer :wk "Switch buffer")
     "bi" '(ibuffer :wk "Ibuffer")
     "bk" '(kill-current-buffer :wk "Kill this buffer")
-    "bn" '(next-buffer :wk "Next buffer")
-    "bp" '(previous-buffer :wk "Previous buffer")
+    ;; I know those are reversed it's intentioanl
+    "bn" '(previous-buffer :wk "Next buffer")
+    "bp" '(next-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Reload buffer"))
 
   (leader-keys
@@ -177,18 +188,23 @@
     "gt" '(git-timemachine :wk "Git time machine")
     "gu" '(magit-stage-file :wk "Git unstage file"))
   
-  (leader-keys
-    "pp" '(projectile-switch-project :wk "Projectile switch"))
+   (leader-keys
+     "pp" '(projectile-switch-project :wk "Projectile switch"))
   
-  (leader-keys
-    "ot" '(vterm :wk "Vterm"))
+   (leader-keys
+     "cd" '(evil-goto-definition :wk "Go To Definition"))
+  
+   (leader-keys
+    "ot" '(vterm-other-window :wk "Vterm"))
+   
+   (leader-keys
+     "/" '(consult-line :wk "Consult Line"))
 )
 
-(use-package vertico
+(use-package ivy
   :ensure t
-  :defer t
   :init
-  (vertico-mode))
+  (ivy-mode))
 
 (use-package emacs
   :custom
@@ -228,11 +244,6 @@
   :diminish
   :hook (company-mode . company-box-mode))
 
-;; (use-package flycheck
-;;   :ensure t
-;;   :config
-;;   (add-hook 'after-init-hook #'global-flycheck-mode))
-
 (use-package projectile
   :ensure t
   :defer t
@@ -245,6 +256,20 @@
 (use-package magit
   :ensure t)
 
+(use-package nasm-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\|inc\\)$" . nasm-mode))
+  :ensure t)
+
+(use-package typst-ts-mode
+  :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode" :branch "main")
+  :custom
+  (typst-ts-watch-options "--open")
+  (typst-ts-mode-grammar-location (expand-file-name "tree-sitter/libtree-sitter-typst.so" user-emacs-directory))
+  (typst-ts-mode-enable-raw-blocks-highlight t)
+  :config
+  (keymap-set typst-ts-mode-map "C-c C-c" #'typst-ts-tmenu))
+
 (require 'eglot)
 ;; C/C++
 (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
@@ -254,6 +279,11 @@
 ;; Python
 (add-to-list 'eglot-server-programs '(python-mode .("pyright-langserver" "--stdio")))
 (add-hook 'python-mode-hook 'eglot-ensure)
+
+;; Typst
+(add-to-list 'eglot-server-programs '(typst-ts-mode . ("tinymist" "lsp")))
+(add-hook 'typst-ts-mode-hook 'eglot-ensure)
+
 
 (use-package which-key
   :ensure t
@@ -283,10 +313,18 @@
 (use-package vterm
   :ensure t)
 
-(use-package elcord
-  :ensure t
-  :demand t
-  :init
-  (elcord-mode t))
-  :custom
-  (setq elcord-editor-icon "emacs_material_icon")
+(use-package consult
+  :ensure t)
+;; (use-package elcord
+;;   :ensure t
+;;   :demand t
+;;   :init
+;;   (elcord-mode t))
+;;   :custom
+;;   (setq elcord-editor-icon "emacs_material_icon")
+
+(setq tramp-terminal-type "xterm")
+
+;; (setq flymake-show-diagnostics-at-end-of-line t)
+
+(setq gdb-many-windows t)
